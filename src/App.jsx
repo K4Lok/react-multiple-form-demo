@@ -111,6 +111,8 @@ function App() {
   }
 
   const saveLocalStorage = () => {
+    if(multipleData.length < 1) return;
+
     localStorage.setItem('multiple-form-data', JSON.stringify(multipleData));
   }
 
