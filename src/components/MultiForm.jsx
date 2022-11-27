@@ -12,8 +12,8 @@ export default function MultiForm({inputFields, inputData, handleInputChange, go
 
 			{/* Button Group For next and last Form */}
 			<div className="flex justify-between items-center w-full pt-4">
-				<button onClick={goPrev} type="button" className='px-6 py-2 bg-violet-300 hover:bg-violet-400 shadow-sm rounded-md text-white'>Prev</button>
-				<button onClick={goNext} type="button" className='px-6 py-2 bg-violet-300 hover:bg-violet-400 shadow-sm rounded-md text-white'>Next</button>
+				<button onClick={goPrev} type="button" className='px-6 py-2 bg-violet-300 hover:bg-violet-400 shadow-sm rounded-md text-white active:scale-[102%]'>Prev</button>
+				<button onClick={goNext} type="button" className='px-6 py-2 bg-violet-300 hover:bg-violet-400 shadow-sm rounded-md text-white active:scale-[102%]'>Next</button>
 			</div>
     </form>
   )

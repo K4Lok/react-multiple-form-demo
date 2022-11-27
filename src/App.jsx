@@ -49,7 +49,17 @@ function App() {
       placeholder: 'Phone Number',
       span: '100%',
     },
-  ]
+  ];
+
+  // When Mounted
+  useEffect(() => {
+    const localFormData = JSON.parse(localStorage.getItem('multiple-form-data'));
+
+    if(localFormData == null) return;
+
+    setMultipleData(localFormData);
+    setInputData(localFormData[currentIndex]);
+  }, []);
 
   // Handlers
   const goNext = () => {
@@ -100,6 +110,15 @@ function App() {
     setInputData(multipleData[nextIndex]);
   }
 
+  const saveLocalStorage = () => {
+    localStorage.setItem('multiple-form-data', JSON.stringify(multipleData));
+  }
+
+  const clearLocalStorage = () => {
+    localStorage.removeItem('multiple-form-data');
+    clearInput();
+  }
+
   // Functions
   const clearInput = () => {
     setInputData({
@@ -117,17 +136,27 @@ function App() {
 				[e.target.id]: e.target.value
 			}
 		});
-	};
+	}
 
   return (
     <div className="App">
       {/* Global Container */}
       <div className="w-screen h-screen bg-gradient-to-br from-purple-100 to-emerald-50">
+        
         {/* Form Wrapper */}
-        <div className="w-full max-w-lg h-full mx-auto px-10 flex justify-center items-center">
+        <div className="w-full max-w-lg h-full mx-auto px-10 flex flex-col justify-center items-center space-y-2">
+          {/* LocalStorage Button Group */}
+          <div className="w-full flex space-x-4 justify-end items-center">
+            <img src="/save.svg" onClick={saveLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white' title="Save to LocalStorage" alt="Save to LocalStorage"/>
+            <img src="/trash.svg" onClick={clearLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white' title="Clear LocalStorage" alt="Clear LocalStorage"/>
+          </div>
           {/* Form Container*/}
           <div className="w-full font-mono space-y-4 mx-auto px-12 bg-white/50 shadow-md backdrop-blur-md py-10 rounded-lg">
-            <h1 className='text-2xl font-extrabold text-slate-700'>Multiple Form Demo</h1>
+            {/* Form Header */}
+            <div className="flex flex-col">
+              <h1 className='text-2xl font-extrabold text-slate-700'>Multiple Form Demo</h1>
+              
+            </div>
             <IndicatorGroup currentIndex={currentIndex} totalIndex={totalIndex} size="32px" />
             <MultiForm inputFields={inputFields} inputData={inputData} handleInputChange={handleInputChange} goPrev={goPrev} goNext={goNext}/>
           </div>
