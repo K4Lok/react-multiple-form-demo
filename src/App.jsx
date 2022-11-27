@@ -146,14 +146,14 @@ function App() {
       <div className="w-screen h-screen bg-gradient-to-br from-purple-100 to-emerald-50">
         
         {/* Form Wrapper */}
-        <div className="w-full max-w-lg h-full mx-auto px-10 flex flex-col justify-center items-center space-y-2">
+        <div className="w-full max-w-lg h-full mx-auto px-4 flex flex-col justify-center items-center space-y-2">
           {/* LocalStorage Button Group */}
           <div className="w-full flex space-x-4 justify-end items-center">
             <img src="/save.svg" onClick={saveLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white' title="Save to LocalStorage" alt="Save to LocalStorage"/>
             <img src="/trash.svg" onClick={clearLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white' title="Clear LocalStorage" alt="Clear LocalStorage"/>
           </div>
           {/* Form Container*/}
-          <div className="w-full font-mono space-y-4 mx-auto px-12 bg-white/50 shadow-md backdrop-blur-md py-10 rounded-lg">
+          <div className="w-full font-mono space-y-4 mx-auto px-6 md:px-12 bg-white/50 shadow-md backdrop-blur-md py-10 rounded-lg">
             {/* Form Header */}
             <div className="flex flex-col">
               <h1 className='text-2xl font-extrabold text-slate-700'>Multiple Form Demo</h1>
