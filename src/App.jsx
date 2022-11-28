@@ -119,6 +119,7 @@ function App() {
   const clearLocalStorage = () => {
     localStorage.removeItem('multiple-form-data');
     clearInput();
+    setMultipleData([]);
   }
 
   // Functions
