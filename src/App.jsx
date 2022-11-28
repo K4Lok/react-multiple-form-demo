@@ -150,8 +150,8 @@ function App() {
         <div className="w-full max-w-lg h-full mx-auto px-4 flex flex-col justify-center items-center space-y-2">
           {/* LocalStorage Button Group */}
           <div className="w-full flex space-x-4 justify-end items-center">
-            <img src="/save.svg" onClick={saveLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white' title="Save to LocalStorage" alt="Save to LocalStorage"/>
-            <img src="/trash.svg" onClick={clearLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white' title="Clear LocalStorage" alt="Clear LocalStorage"/>
+            <img src="/save.svg" onClick={saveLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white cursor-pointer' title="Save to LocalStorage" alt="Save to LocalStorage"/>
+            <img src="/trash.svg" onClick={clearLocalStorage}  className='w-8 h-8 px-1 py-1 bg-slate-300 hover:bg-slate-500 rounded-md active:scale-[102%] text-white cursor-pointer' title="Clear LocalStorage" alt="Clear LocalStorage"/>
           </div>
           {/* Form Container*/}
           <div className="w-full font-mono space-y-4 mx-auto px-6 md:px-12 bg-white/50 shadow-md backdrop-blur-md py-10 rounded-lg">
